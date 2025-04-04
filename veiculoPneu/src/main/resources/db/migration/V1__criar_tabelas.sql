@@ -13,7 +13,7 @@ CREATE TABLE veiculos (
 -- Tabela de Pneus
 CREATE TABLE pneus (
     id SERIAL PRIMARY KEY,
-    numero_de_fogo INT UNIQUE NOT NULL,
+    numero_de_fogo BIGINT UNIQUE NOT NULL,
     marca VARCHAR(50) NOT NULL,
     pressao_atual INT NOT NULL,
     status VARCHAR(20) DEFAULT 'INATIVO'
@@ -22,7 +22,7 @@ CREATE TABLE pneus (
 -- Tabela de Relacionamento Veículo - Pneus
 CREATE TABLE veiculo_pneus (
     placa_veiculo VARCHAR(7) NOT NULL,  
-    numero_fogo INT NOT NULL,  
+    numero_fogo BIGINT NOT NULL,  
     posicao VARCHAR(1) NOT NULL,  -- Ex: A, B, C, D
     PRIMARY KEY (placa_veiculo, numero_fogo),  -- Chave primária composta
     FOREIGN KEY (placa_veiculo) REFERENCES veiculos(placa),

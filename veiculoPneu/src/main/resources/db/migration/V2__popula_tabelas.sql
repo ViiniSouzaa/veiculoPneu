@@ -55,10 +55,10 @@ INSERT INTO pneus (numero_de_fogo, marca, pressao_atual, status) VALUES
 (1031, 'Pirelli', 30, 'Ativo'),
 (1032, 'Bridgestone', 35, 'Ativo'),
 (1033, 'Goodyear', 33, 'Ativo'),
-(1034, 'Dunlop', 32, 'Inativo'),
-(1035, 'Michelin', 30, 'Inativo'),
-(1036, 'Pirelli', 31, 'Inativo'),
-(1037, 'Bridgestone', 34, 'Inativo'),
+(1034, 'Dunlop', 32, 'Ativo'),
+(1035, 'Michelin', 30, 'Ativo'),
+(1036, 'Pirelli', 31, 'Ativo'),
+(1037, 'Bridgestone', 34, 'Ativo'),
 (1038, 'Goodyear', 32, 'Inativo'),
 (1039, 'Dunlop', 33, 'Inativo'),
 (1040, 'Michelin', 32, 'Inativo'),
@@ -118,3 +118,10 @@ INSERT INTO veiculo_pneus (placa_veiculo, numero_fogo, posicao) VALUES
 INSERT INTO veiculo_pneus (placa_veiculo, numero_fogo, posicao) VALUES
 ('GHI4321', 1032, 'A'),
 ('GHI4321', 1033, 'B');
+
+-- Veículo ABC1234 (Carro)
+INSERT INTO veiculo_pneus (placa_veiculo, numero_fogo, posicao) VALUES
+('ABC1234', 1034, 'A'),
+('ABC1234', 1035, 'B'),
+('ABC1234', 1036, 'C'),
+('ABC1234', 1037, 'D');
