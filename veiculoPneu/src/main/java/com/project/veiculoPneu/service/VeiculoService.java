@@ -31,6 +31,13 @@ public class VeiculoService {
         VeiculoPneuDTO veiculoDTO = new VeiculoPneuDTO(veiculo, veiculoPneus);
         return veiculoDTO;
     }
+    
+    public VeiculoPneuDTO obterVeiculoComPneus(String placa) {
+        Veiculo veiculo = veiculoRepository.findByPlaca(placa).orElseThrow(() -> new RuntimeException("Veículo não encontrado"));
+        List<PneuDTO> veiculoPneus = pneuService.findPneuSituacaoByPlaca(placa);
+        VeiculoPneuDTO veiculoDTO = new VeiculoPneuDTO(veiculo, veiculoPneus);
+        return veiculoDTO;
+    }
 
     public Veiculo salvarVeiculo(Veiculo veiculo) {
         return veiculoRepository.save(veiculo);

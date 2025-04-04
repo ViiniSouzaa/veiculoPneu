@@ -29,6 +29,11 @@ public class PneuService {
         return pneuRepositoryJPA.findById(id).orElseThrow(() -> new RuntimeException("Pneu não encontrado"));
     }
     
+    // Método para buscar um pneu específico
+    public Pneu findByNumeroDeFogo(Long numeroDeFogo) {
+        return pneuRepositoryJPA.findByNumeroDeFogo(numeroDeFogo).orElseThrow(() -> new RuntimeException("Pneu não encontrado"));
+    }
+    
     //Método para buscar pneus e situacao por placa de veiculo
     public List<PneuDTO> findPneuSituacaoByPlaca(String placa){
     	return pneuRepository.findPneuSituacaoByPlaca(placa);
