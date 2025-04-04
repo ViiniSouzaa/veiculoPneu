@@ -2,10 +2,10 @@ package com.project.veiculoPneu.model;
 
 import java.util.List;
 
-
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.project.veiculoPneu.VeiculoPneuApplication;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,17 +25,15 @@ public class Veiculo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String placa;
+    
     private String marca;
     private Integer quilometragem;
     private String status;
     private String tipo;
 
     @OneToMany(mappedBy = "veiculo")
+    @JsonIgnore
     private List<VeiculoPneu> veiculoPneus;
-
-	public void setVeiculoPneus(List<VeiculoPneu> veiculoPneus) {
-		this.veiculoPneus = veiculoPneus;
-		
-	}
 }

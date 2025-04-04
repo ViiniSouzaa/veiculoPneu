@@ -3,6 +3,7 @@ package com.project.veiculoPneu.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,11 +26,12 @@ public class VeiculoPneu {
     @Column(name = "numero_fogo")
     private Integer numeroDeFogo;  // Chave estrangeira para Pneu (numero_de_fogo)
 
-    @ManyToOne
+    
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "placa_veiculo", insertable = false, updatable = false)
     private Veiculo veiculo;  // Relacionamento com a entidade Veiculo
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "numero_fogo", insertable = false, updatable = false)
     private Pneu pneu;  // Relacionamento com a entidade Pneu
 
