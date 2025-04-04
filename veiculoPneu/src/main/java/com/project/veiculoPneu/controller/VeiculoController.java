@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.veiculoPneu.model.Veiculo;
+import com.project.veiculoPneu.model.dto.VeiculoDTO;
+import com.project.veiculoPneu.model.dto.VeiculoPneuDTO;
 import com.project.veiculoPneu.service.VeiculoService;
 
 @RestController
@@ -26,7 +28,7 @@ public class VeiculoController {
     }
 
     @GetMapping("/{id}")
-    public Veiculo obterVeiculo(@PathVariable Long id) {
+    public VeiculoPneuDTO obterVeiculo(@PathVariable Long id) {
         return veiculoService.obterVeiculoComPneus(id);
     }
 
