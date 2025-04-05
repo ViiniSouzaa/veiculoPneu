@@ -44,7 +44,7 @@ Certifique-se de ter os seguintes pré-requisitos antes de rodar o projeto:
    
        git clone https://github.com/SEU-USUARIO/veiculoPneu.git
 
-       cd veiculos-api
+       cd veiculoPneu
 
 2. Instale o PostgreSQL em sua máquina local e crie o banco de dados veiculosdb.
    
