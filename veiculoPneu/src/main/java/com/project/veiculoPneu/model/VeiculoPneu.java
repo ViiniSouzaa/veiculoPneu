@@ -16,6 +16,7 @@ import lombok.Data;
 @Entity
 @Table(name = "veiculo_pneus")
 @IdClass(VeiculoPneuId.class)  // Usando a chave composta
+@Data
 public class VeiculoPneu {
 
     @Id

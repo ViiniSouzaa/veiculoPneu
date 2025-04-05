@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.veiculoPneu.model.Veiculo;
-import com.project.veiculoPneu.model.dto.VeiculoDTO;
 import com.project.veiculoPneu.model.dto.VeiculoPneuDTO;
 import com.project.veiculoPneu.service.VeiculoService;
 
