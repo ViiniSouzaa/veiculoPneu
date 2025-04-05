@@ -42,7 +42,7 @@ Certifique-se de ter os seguintes pré-requisitos antes de rodar o projeto:
 
 1. Clone o repositório:
    
-       git clone https://github.com/seu-usuario/veiculos-api.git
+       git clone https://github.com/SEU-USUARIO/veiculoPneu.git
 
        cd veiculos-api
 
