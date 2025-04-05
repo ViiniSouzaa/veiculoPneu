@@ -36,6 +36,47 @@ Certifique-se de ter os seguintes pré-requisitos antes de rodar o projeto:
 - **Docker** (para rodar o banco de dados PostgreSQL e a aplicação)
 - **Maven** (para construir o projeto, caso não use o Docker)
 
+
+## Antes de Rodar o Projeto 
+
+### Tutorial: Como Criar o Banco de Dados para a Aplicação
+
+Antes de iniciar a aplicação, é necessário garantir que o banco de dados esteja configurado corretamente. Abaixo estão as instruções para criar o banco de dados veiculosdb e garantir que a aplicação funcione corretamente.
+
+1. Configurar Banco de Dados PostgreSQL
+
+1.1 Instalar o PostgreSQL
+
+Se você ainda não tem o PostgreSQL instalado, siga as instruções para instalar o PostgreSQL:
+
+1.2 Criar o Banco de Dados
+
+Após a instalação do PostgreSQL, você pode criar o banco de dados veiculosdb executando os seguintes comandos.
+
+Abra o terminal ou o console de comando do PostgreSQL (psql).
+
+Conecte-se ao PostgreSQL com o usuário postgres:
+
+
+      psql -U postgres
+
+Crie o banco de dados veiculosdb:
+
+      CREATE DATABASE veiculosdb;
+
+Verifique se o banco de dados foi criado com sucesso:
+
+      \l
+
+Isso irá listar todos os bancos de dados. Verifique se o veiculosdb está na lista.
+
+1.3 Verificar a Conexão
+Certifique-se de que você pode se conectar ao banco de dados com o usuário criado:
+
+      psql -U veiculo_user -d veiculosdb
+
+Se tudo estiver correto, você verá o prompt de comandos do PostgreSQL.
+
 ## Como Rodar o Projeto
 
 ### 1. Rodando com Docker
@@ -44,13 +85,11 @@ Certifique-se de ter os seguintes pré-requisitos antes de rodar o projeto:
    
        git clone https://github.com/SEU-USUARIO/veiculoPneu.git
 
-       cd veiculoPneu
-
-2. Instale o PostgreSQL em sua máquina local e crie o banco de dados veiculosdb.
+       cd .\veiculoPneu\.\veiculoPneu\
    
-3. Construa e inicie os containers Docker:
-
-
+2. Construa e inicie os containers Docker:
+         
+        ./mvnw clean package
         docker-compose up --build
 
 Isso irá:
