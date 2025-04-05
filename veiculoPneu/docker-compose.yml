@@ -6,7 +6,7 @@ services:
     image: postgres:latest
     container_name: veiculos-db
     environment:
-      POSTGRES_USER: postgresVeiculoPneu
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: veiculosdb
     volumes:
@@ -27,11 +27,9 @@ services:
     networks:
       - app-network
 
-# Definindo volumes para persistência de dados
 volumes:
   postgres-data:
 
-# Definindo uma rede para comunicação entre os serviços
 networks:
   app-network:
     driver: bridge
