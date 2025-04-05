@@ -5,20 +5,36 @@ Esta é uma aplicação construída com **Spring Boot** e **PostgreSQL** que ofe
 ## Funcionalidades
 
 1. **Consultar todos os veículos**:
-   - Endpoint: `GET /veiculos`
+   - Endpoint: `GET /api/veiculos`
    - Retorna todos os veículos cadastrados no banco de dados (sem incluir os pneus).
 
 2. **Consultar um veículo específico com pneus**:
-   - Endpoint: `GET /veiculos/{id}`
+   - Endpoint: `GET /api/veiculos/{id}`
    - Retorna um veículo específico e os pneus aplicados, incluindo a posição de cada pneu no veículo.
 
 3. **Criar um veículo**:
-   - Endpoint: `POST /veiculos`
+   - Endpoint: `POST /api/veiculos`
    - Cria um novo veículo com os dados fornecidos no corpo da requisição.
+  
+4. **Consultar um veículo específico com pneus pela placa**:
+   - Endpoint: `GET /api/veiculos/placa/{placa}`
+   - Retorna um veículo específico e os pneus aplicados, incluindo a posição de cada pneu no veículo.
 
-4. **Criar um pneu**:
-   - Endpoint: `POST /pneus`
+5. **Criar um pneu**:
+   - Endpoint: `POST /api/pneus`
    - Cria um novo pneu com status "INATIVO" por padrão.
+  
+6. **Consultar um pneu específico**:
+   - Endpoint: `GET /api/pneus/numeroDeFogo/{numeroDeFogo}`
+   - Retorna um veículo específico e os pneus aplicados, incluindo a posição de cada pneu no veículo. 
+
+7. **Consultar um pneu específico**:
+   - Endpoint: `GET /api/pneus/{id}`
+   - Retorna um veículo específico e os pneus aplicados, incluindo a posição de cada pneu no veículo.
+  
+8. **Consultar todos os pneus**:
+   - Endpoint: `GET /api/pneus`
+   - Retorna todos os pneus cadastrados no banco de dados.
 
 ## Tecnologias Utilizadas
 
@@ -89,7 +105,7 @@ Se tudo estiver correto, você verá o prompt de comandos do PostgreSQL.
    
 2. Construa e inicie os containers Docker:
          
-        ./mvnw clean package
+        mvn clean package -DskipTests
         docker-compose up --build
 
 Isso irá:
