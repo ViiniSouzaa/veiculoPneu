@@ -104,7 +104,7 @@ public class VeiculoServiceTest {
         var response = veiculoController.obterVeiculo(1L);
 
         assertNotNull(response);
-        assertEquals("ABC1234", response.getVeiculo().getPlaca());
+        assertEquals("ABC-1234", response.getVeiculo().getPlaca());
         assertTrue(response.getPneus().size() > 0);
 
         verify(veiculoService, times(1)).obterVeiculoComPneus(1L);
@@ -118,7 +118,7 @@ public class VeiculoServiceTest {
         var response = veiculoController.obterVeiculobyPlaca("ABC1234");
 
         assertNotNull(response);
-        assertEquals("ABC1234", response.getVeiculo().getPlaca());
+        assertEquals("ABC-1234", response.getVeiculo().getPlaca());
         assertTrue(response.getPneus().size() > 0);
 
         verify(veiculoService, times(1)).obterVeiculoComPneus("ABC1234");

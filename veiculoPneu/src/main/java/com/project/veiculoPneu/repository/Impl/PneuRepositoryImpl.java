@@ -27,30 +27,7 @@ public class PneuRepositoryImpl implements PneuRepository{
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<PneuDTO> findPneuSituacaoByPlaca(String placa) {
-//		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-//
-//        CriteriaQuery<PneuDTO> criteriaQuery = criteriaBuilder.createQuery(PneuDTO.class);
-//
-//        Root<Pneu> pneuRoot = criteriaQuery.from(Pneu.class);
-//
-//        Join<Pneu, VeiculoPneu> veiculoPneuJoin = pneuRoot.join("veiculoPneus");
-//        Join<VeiculoPneu, Veiculo> veiculoJoin = veiculoPneuJoin.join("veiculo");
-//
-//        criteriaQuery.select(criteriaBuilder.construct(PneuDTO.class, 
-//            pneuRoot.get("numeroDeFogo"), 
-//            pneuRoot.get("marca"), 
-//            pneuRoot.get("pressaoAtual"), 
-//            pneuRoot.get("status"),
-//            veiculoPneuJoin.get("posicao")
-//        	));
-//
-//        criteriaQuery.where(criteriaBuilder.equal(veiculoJoin.get("placa"), placa));
-//
-//        TypedQuery<PneuDTO> query = entityManager.createQuery(criteriaQuery);
-//        
-//        return query.getResultList();
-		
+	public List<PneuDTO> findPneuSituacaoByPlaca(String placa) {		
 		String jpql = "SELECT new com.project.veiculoPneu.model.dto.PneuDTO(p.id, p.numeroDeFogo, p.marca, p.pressaoAtual, p.status, vp.posicao) " +
 	              "FROM Pneu p " +
 	              "JOIN VeiculoPneu vp ON vp.numeroDeFogo = p.numeroDeFogo " +
