@@ -6,15 +6,15 @@
 */
 
 INSERT INTO veiculos (placa, marca, quilometragem, status, tipo) VALUES
-('ABC1234', 'Toyota', 50000, 'Ativo', 'Carro'),
-('XYZ9876', 'Ford', 30000, 'Ativo', 'Carro'),
-('LMN4567', 'Harley', 20000, 'Ativo', 'Moto'),
-('JKL8520', 'Mercedes', 100000, 'Ativo', 'Truck'),
-('OPQ3210', 'Fiat', 45000, 'Ativo', 'Carro'),
-('RST6543', 'Honda', 25000, 'Em manutenção', 'Moto'),
-('UVW7890', 'Volkswagen', 80000, 'Ativo', 'Carro'),
-('DEF5678', 'BMW', 150000, 'Ativo', 'Truck'),
-('GHI4321', 'Suzuki', 20000, 'Inativo', 'Moto');
+('ABC-1234', 'Toyota', 50000, 'Ativo', 'Carro'),
+('XYZ-9876', 'Ford', 30000, 'Ativo', 'Carro'),
+('LMN-4567', 'Harley', 20000, 'Ativo', 'Moto'),
+('JKL-8520', 'Mercedes', 100000, 'Ativo', 'Truck'),
+('OPQ-3210', 'Fiat', 45000, 'Ativo', 'Carro'),
+('RST-6543', 'Honda', 25000, 'Em manutenção', 'Moto'),
+('UVW-7890', 'Volkswagen', 80000, 'Ativo', 'Carro'),
+('DEF-5678', 'BMW', 150000, 'Ativo', 'Truck'),
+('GHI-4321', 'Suzuki', 20000, 'Inativo', 'Moto');
 
 
 -- 	Inserção de pneus
@@ -67,61 +67,61 @@ INSERT INTO pneus (numero_de_fogo, marca, pressao_atual, status) VALUES
 
 -- Veículo XYZ9876 (Carro) 
 INSERT INTO veiculo_pneus (placa_veiculo, numero_fogo, posicao) VALUES
-('XYZ9876', 1004, 'A'),
-('XYZ9876', 1005, 'B'),
-('XYZ9876', 1006, 'C'),
-('XYZ9876', 1007, 'D');
+('XYZ-9876', 1004, 'A'),
+('XYZ-9876', 1005, 'B'),
+('XYZ-9876', 1006, 'C'),
+('XYZ-9876', 1007, 'D');
 
 -- Veículo LMN4567 (Moto)
 INSERT INTO veiculo_pneus (placa_veiculo, numero_fogo, posicao) VALUES
-('LMN4567', 1008, 'A'),
-('LMN4567', 1009, 'B');
+('LMN-4567', 1008, 'A'),
+('LMN-4567', 1009, 'B');
 
 -- Veículo JKL8520 (Truck)
 INSERT INTO veiculo_pneus (placa_veiculo, numero_fogo, posicao) VALUES
-('JKL8520', 1010, 'A'),
-('JKL8520', 1011, 'B'),
-('JKL8520', 1012, 'C'),
-('JKL8520', 1013, 'D'),
-('JKL8520', 1014, 'E'),
-('JKL8520', 1015, 'F');
+('JKL-8520', 1010, 'A'),
+('JKL-8520', 1011, 'B'),
+('JKL-8520', 1012, 'C'),
+('JKL-8520', 1013, 'D'),
+('JKL-8520', 1014, 'E'),
+('JKL-8520', 1015, 'F');
 
 -- Veículo OPQ3210 (Carro) 
 INSERT INTO veiculo_pneus (placa_veiculo, numero_fogo, posicao) VALUES
-('OPQ3210', 1016, 'A'),
-('OPQ3210', 1017, 'B'),
-('OPQ3210', 1018, 'C'),
-('OPQ3210', 1019, 'D');
+('OPQ-3210', 1016, 'A'),
+('OPQ-3210', 1017, 'B'),
+('OPQ-3210', 1018, 'C'),
+('OPQ-3210', 1019, 'D');
 
 -- Veículo RST6543 (Moto)
 INSERT INTO veiculo_pneus (placa_veiculo, numero_fogo, posicao) VALUES
-('RST6543', 1020, 'A'),
-('RST6543', 1021, 'B');
+('RST-6543', 1020, 'A'),
+('RST-6543', 1021, 'B');
 
 -- Veículo UVW7890 (Carro)
 INSERT INTO veiculo_pneus (placa_veiculo, numero_fogo, posicao) VALUES
-('UVW7890', 1022, 'A'),
-('UVW7890', 1023, 'B'),
-('UVW7890', 1024, 'C'),
-('UVW7890', 1025, 'D');
+('UVW-7890', 1022, 'A'),
+('UVW-7890', 1023, 'B'),
+('UVW-7890', 1024, 'C'),
+('UVW-7890', 1025, 'D');
 
 -- Veículo DEF5678 (Truck) 
 INSERT INTO veiculo_pneus (placa_veiculo, numero_fogo, posicao) VALUES
-('DEF5678', 1026, 'A'),
-('DEF5678', 1027, 'B'),
-('DEF5678', 1028, 'C'),
-('DEF5678', 1029, 'D'),
-('DEF5678', 1030, 'E'),
-('DEF5678', 1031, 'F');
+('DEF-5678', 1026, 'A'),
+('DEF-5678', 1027, 'B'),
+('DEF-5678', 1028, 'C'),
+('DEF-5678', 1029, 'D'),
+('DEF-5678', 1030, 'E'),
+('DEF-5678', 1031, 'F');
 
 -- Veículo GHI4321 (Moto)
 INSERT INTO veiculo_pneus (placa_veiculo, numero_fogo, posicao) VALUES
-('GHI4321', 1032, 'A'),
-('GHI4321', 1033, 'B');
+('GHI-4321', 1032, 'A'),
+('GHI-4321', 1033, 'B');
 
 -- Veículo ABC1234 (Carro)
 INSERT INTO veiculo_pneus (placa_veiculo, numero_fogo, posicao) VALUES
-('ABC1234', 1034, 'A'),
-('ABC1234', 1035, 'B'),
-('ABC1234', 1036, 'C'),
-('ABC1234', 1037, 'D');
+('ABC-1234', 1034, 'A'),
+('ABC-1234', 1035, 'B'),
+('ABC-1234', 1036, 'C'),
+('ABC-1234', 1037, 'D');

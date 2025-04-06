@@ -3,11 +3,12 @@
 -- Tabela de Veículos
 CREATE TABLE veiculos (
     id SERIAL PRIMARY KEY,
-    placa VARCHAR(7) UNIQUE NOT NULL,
+    placa VARCHAR(8) UNIQUE NOT NULL,
     marca VARCHAR(50) NOT NULL,
     quilometragem INT NOT NULL,
     status VARCHAR(20) NOT NULL,
-    tipo VARCHAR(20) NOT NULL  
+    tipo VARCHAR(20) NOT NULL,
+    CONSTRAINT placa_format CHECK (placa ~ '^[A-Z0-9]{3}-[A-Z0-9]{4}$')  
 );
 
 -- Tabela de Pneus
@@ -21,7 +22,7 @@ CREATE TABLE pneus (
 
 -- Tabela de Relacionamento Veículo - Pneus
 CREATE TABLE veiculo_pneus (
-    placa_veiculo VARCHAR(7) NOT NULL,  
+    placa_veiculo VARCHAR(8) NOT NULL,  
     numero_fogo BIGINT NOT NULL,  
     posicao VARCHAR(1) NOT NULL,  -- Ex: A, B, C, D
     PRIMARY KEY (placa_veiculo, numero_fogo),  -- Chave primária composta

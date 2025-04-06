@@ -57,7 +57,7 @@ public class VeiculoControllerTest {
 
     	this.veiculo = new Veiculo();
         veiculo.setId(1L);
-        veiculo.setPlaca("ABC1234");
+        veiculo.setPlaca("ABC-1234");
         veiculo.setMarca("Toyota");
         veiculo.setQuilometragem(50000);
         veiculo.setStatus("ATIVO");
