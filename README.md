@@ -68,7 +68,6 @@ Certifique-se de ter os seguintes pré-requisitos antes de rodar o projeto:
    
 2. Construa e inicie os containers Docker:
          
-        mvn clean package -DskipTests
         docker-compose up --build
 
 Isso irá:
