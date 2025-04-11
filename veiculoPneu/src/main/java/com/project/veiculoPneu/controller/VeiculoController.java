@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.veiculoPneu.model.Veiculo;
+import com.project.veiculoPneu.model.dto.VeiculoDTO;
 import com.project.veiculoPneu.model.dto.VeiculoPneuDTO;
 import com.project.veiculoPneu.service.VeiculoService;
 
@@ -29,7 +30,7 @@ public class VeiculoController {
     @GetMapping
     @Operation(	summary = "Lista todos os veiculos", 
     			description = "Retorna uma lista de todos os veiculos existentes")
-    public List<Veiculo> listarVeiculos() {
+    public List<VeiculoDTO> listarVeiculos() {
         return veiculoService.listarTodosVeiculos();
     }
 
@@ -53,7 +54,7 @@ public class VeiculoController {
 
     @PostMapping
     @Operation(summary = "Cria um veiculo", description = "Retorna um veiculo criado")
-    public Veiculo criarVeiculo(@RequestBody Veiculo veiculo) {
+    public Veiculo criarVeiculo(@RequestBody VeiculoDTO veiculo) {
         return veiculoService.salvarVeiculo(veiculo);
     }
 }

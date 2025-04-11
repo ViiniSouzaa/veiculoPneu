@@ -1,7 +1,3 @@
-# Link da proposta da segunda atividade do teste pratico
-
-      https://docs.google.com/document/d/1s7Lb67fwYeOka8VUaVu1nj5ONDKJqX9g8qNFkOCAkws/edit?usp=sharing
-
 # API de Veículos e Pneus
 
 Esta é uma aplicação construída com **Spring Boot** e **PostgreSQL** que oferece endpoints para consulta, criação e gerenciamento de veículos e pneus. A aplicação utiliza **Flyway** para migração do banco de dados e está configurada para rodar em contêineres Docker.
