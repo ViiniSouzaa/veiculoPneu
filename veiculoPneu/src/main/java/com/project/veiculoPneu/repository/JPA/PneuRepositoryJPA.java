@@ -18,7 +18,7 @@ public interface PneuRepositoryJPA extends JpaRepository<Pneu, Long> {
     
 	@SuppressWarnings("null")
 	@Query("SELECT p FROM Pneu p WHERE p.id = :id")
-	Optional<Pneu> findById(@SuppressWarnings("null") Long id);
+	Optional<Pneu> findById( Long id);
 	
 	@Query("SELECT p FROM Pneu p WHERE p.numeroDeFogo = :numeroDeFogo")
 	Optional<Pneu> findByNumeroDeFogo(Long numeroDeFogo);

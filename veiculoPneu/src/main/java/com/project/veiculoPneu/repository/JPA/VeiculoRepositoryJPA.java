@@ -17,7 +17,7 @@ public interface VeiculoRepositoryJPA extends JpaRepository<Veiculo, Long> {
 	List<Veiculo> findAll();
     
     @SuppressWarnings("null")
-    Optional<Veiculo> findById(@SuppressWarnings("null") Long id);
+    Optional<Veiculo> findById( Long id);
     
     @Query("SELECT v FROM Veiculo v WHERE v.placa = :placa")
     Optional<Veiculo> findByPlaca(String placa);

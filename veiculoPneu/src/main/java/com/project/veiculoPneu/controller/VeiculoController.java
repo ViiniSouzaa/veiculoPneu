@@ -55,6 +55,7 @@ public class VeiculoController {
     @PostMapping
     @Operation(summary = "Cria um veiculo", description = "Retorna um veiculo criado")
     public Veiculo criarVeiculo(@RequestBody VeiculoDTO veiculo) {
+        
         return veiculoService.salvarVeiculo(veiculo);
     }
 }
