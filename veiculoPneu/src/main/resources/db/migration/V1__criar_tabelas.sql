@@ -1,7 +1,7 @@
 -- Criação das tabelas
 
 -- Tabela de Veículos
-CREATE TABLE veiculos (
+CREATE TABLE IF NOT EXISTS veiculos (
     id SERIAL PRIMARY KEY,
     placa VARCHAR(8) UNIQUE NOT NULL,
     marca VARCHAR(50) NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE veiculos (
 );
 
 -- Tabela de Pneus
-CREATE TABLE pneus (
+CREATE TABLE IF NOT EXISTS pneus (
     id SERIAL PRIMARY KEY,
     numero_de_fogo BIGINT UNIQUE NOT NULL,
     marca VARCHAR(50) NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE pneus (
 );
 
 -- Tabela de Relacionamento Veículo - Pneus
-CREATE TABLE veiculo_pneus (
+CREATE TABLE IF NOT EXISTS veiculo_pneus (
     placa_veiculo VARCHAR(8) NOT NULL,  
     numero_fogo BIGINT NOT NULL,  
     posicao VARCHAR(1) NOT NULL,  -- Ex: A, B, C, D
