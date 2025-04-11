@@ -46,7 +46,7 @@ public class VeiculoControllerTest {
     
     private VeiculoPneuDTO veiculoDto;
     
-    private Veiculo veiculo;
+    private VeiculoDTO veiculo;
     
     @Autowired
     Gson gson;
@@ -55,7 +55,7 @@ public class VeiculoControllerTest {
     void setUp() {
     	mockMvc = MockMvcBuilders.standaloneSetup(veiculoController).build();
 
-    	this.veiculo = new Veiculo();
+    	this.veiculo = new VeiculoDTO();
         veiculo.setId(1L);
         veiculo.setPlaca("ABC-1234");
         veiculo.setMarca("Toyota");
@@ -65,7 +65,7 @@ public class VeiculoControllerTest {
         
         veiculoDto = new VeiculoPneuDTO();
         
-        this.veiculoDto.setVeiculo(VeiculoDTO.from(veiculo));
+        this.veiculoDto.setVeiculo(veiculo);
         
         List<PneuDTO> pneus = new ArrayList<PneuDTO>();
         pneus.add(new PneuDTO(35L,1034L,"Dunlop",32,"Ativo","A"));
@@ -79,7 +79,7 @@ public class VeiculoControllerTest {
     @Test
     public void testCriarVeiculo() throws Exception {
 
-    	when(veiculoService.salvarVeiculo(veiculo)).thenReturn(veiculo);
+    	when(veiculoService.salvarVeiculo(veiculo)).thenReturn(Veiculo.from(veiculo));
 
 
     	mockMvc.perform(post("/api/veiculos")

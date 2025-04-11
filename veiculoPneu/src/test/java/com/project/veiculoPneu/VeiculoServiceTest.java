@@ -10,22 +10,17 @@ import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.project.veiculoPneu.controller.VeiculoController;
-import com.project.veiculoPneu.model.Pneu;
 import com.project.veiculoPneu.model.Veiculo;
 import com.project.veiculoPneu.model.dto.PneuDTO;
 import com.project.veiculoPneu.model.dto.VeiculoDTO;
 import com.project.veiculoPneu.model.dto.VeiculoPneuDTO;
-import com.project.veiculoPneu.repository.JPA.VeiculoRepositoryJPA;
 import com.project.veiculoPneu.service.PneuService;
 import com.project.veiculoPneu.service.VeiculoService;
 
@@ -43,13 +38,13 @@ public class VeiculoServiceTest {
     
     private VeiculoPneuDTO veiculoDto;
     
-    private Veiculo veiculo;
+    private VeiculoDTO veiculo;
     
     
     @BeforeEach
     void setUp() {
 
-    	this.veiculo = new Veiculo();
+    	this.veiculo = new VeiculoDTO();
         veiculo.setId(1L);
         veiculo.setPlaca("ABC-1234");
         veiculo.setMarca("Toyota");
@@ -59,7 +54,7 @@ public class VeiculoServiceTest {
         
         veiculoDto = new VeiculoPneuDTO();
         
-        this.veiculoDto.setVeiculo(VeiculoDTO.from(veiculo));
+        this.veiculoDto.setVeiculo(veiculo);
         
         List<PneuDTO> pneus = new ArrayList<PneuDTO>();
         pneus.add(new PneuDTO(35L,1034L,"Dunlop",32,"Ativo","A"));
@@ -72,7 +67,7 @@ public class VeiculoServiceTest {
 
     @Test
     void insereVeiculo() {
-    	when(veiculoService.salvarVeiculo(this.veiculo)).thenReturn(this.veiculo);
+    	when(veiculoService.salvarVeiculo(this.veiculo)).thenReturn(Veiculo.from(veiculo));
 
         Veiculo veiculoSalvo = veiculoService.salvarVeiculo(this.veiculo);
 
@@ -87,7 +82,7 @@ public class VeiculoServiceTest {
     
     @Test
     public void testListarTodosVeiculos() {
-    	List<Veiculo> veiculos = new ArrayList<>();
+    	List<VeiculoDTO> veiculos = new ArrayList<>();
         veiculos.add(veiculo);
         
         when(veiculoService.listarTodosVeiculos()).thenReturn(veiculos);

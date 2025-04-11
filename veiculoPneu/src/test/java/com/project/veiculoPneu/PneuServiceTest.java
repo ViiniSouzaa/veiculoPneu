@@ -18,7 +18,7 @@ import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.project.veiculoPneu.controller.PneuController;
-import com.project.veiculoPneu.model.Pneu;
+import com.project.veiculoPneu.model.dto.PneuDTO;
 import com.project.veiculoPneu.service.PneuService;
 
 @SpringBootTest
@@ -30,12 +30,12 @@ public class PneuServiceTest {
     @Mock
     private PneuService pneuService;  // O Serviço que o Controller utiliza para obter os dados
 
-    private Pneu pneu;
+    private PneuDTO pneu;
 
     @BeforeEach
     void setUp() {
         // Setup do pneu que será utilizado nos testes
-        pneu = new Pneu();
+        pneu = new PneuDTO();
         pneu.setId(1L);
         pneu.setNumeroDeFogo(1000L);
         pneu.setMarca("Michelin");

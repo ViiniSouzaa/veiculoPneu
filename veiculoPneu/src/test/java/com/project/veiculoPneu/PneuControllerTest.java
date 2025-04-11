@@ -22,6 +22,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import com.google.gson.Gson;
 import com.project.veiculoPneu.controller.PneuController;
 import com.project.veiculoPneu.model.Pneu;
+import com.project.veiculoPneu.model.dto.PneuDTO;
 import com.project.veiculoPneu.service.PneuService;
 
 @SpringBootTest
@@ -36,7 +37,7 @@ public class PneuControllerTest {
 
     private MockMvc mockMvc;
 
-    private Pneu pneu;
+    private PneuDTO pneu;
     
     @Autowired
     Gson gson;
@@ -45,7 +46,7 @@ public class PneuControllerTest {
     void setUp() {
         mockMvc = MockMvcBuilders.standaloneSetup(pneuController).build();
 
-        pneu = new Pneu();
+        pneu = new PneuDTO();
         pneu.setNumeroDeFogo(12345L);
         pneu.setMarca("Dunlop");
         pneu.setPressaoAtual(32);
@@ -84,7 +85,7 @@ public class PneuControllerTest {
 
     @Test
     public void testCriarPneu() throws Exception {
-        when(pneuService.salvarPneu(pneu)).thenReturn(pneu);
+        when(pneuService.salvarPneu(pneu)).thenReturn(Pneu.from(pneu));
 
         mockMvc.perform(post("/api/pneus")
                 .contentType("application/json")
