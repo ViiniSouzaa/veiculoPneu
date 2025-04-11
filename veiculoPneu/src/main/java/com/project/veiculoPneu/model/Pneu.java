@@ -3,6 +3,7 @@ package com.project.veiculoPneu.model;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.project.veiculoPneu.model.dto.PneuDTO;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
@@ -12,13 +13,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
 @Data
 @Table(name = "pneus")
+@Builder
 public class Pneu {
 
     @Id
@@ -42,4 +43,15 @@ public class Pneu {
     @OneToMany(mappedBy = "pneu")
     @JsonIgnore
     private List<VeiculoPneu> veiculoPneus;
+
+    public static Pneu from(PneuDTO pneu) {
+        return new PneuBuilder()
+                    .id(pneu.getId())
+                    .numeroDeFogo(pneu.getNumeroDeFogo())
+                    .marca(pneu.getMarca())
+                    .pressaoAtual(pneu.getPressaoAtual())
+                    .status(pneu.getStatus())
+                    .build();
+
+    }
 }

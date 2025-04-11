@@ -1,5 +1,6 @@
 package com.project.veiculoPneu.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,18 +21,30 @@ public class PneuService {
     private PneuRepository pneuRepository;
 
     // Método para listar todos os pneus
-    public List<Pneu> listarTodosPneus() {
-        return pneuRepositoryJPA.findAll();
+    public List<PneuDTO> listarTodosPneus() {
+        List<PneuDTO> pneusReturn = new ArrayList<PneuDTO>();
+        
+        for(Pneu pneu : pneuRepositoryJPA.findAll()){
+            pneusReturn.add(PneuDTO.from(pneu));
+        }
+
+        return pneusReturn;
     }
 
     // Método para buscar um pneu específico
-    public Pneu obterPneu(Long id) {
-        return pneuRepositoryJPA.findById(id).orElseThrow(() -> new RuntimeException("Pneu não encontrado"));
+    public PneuDTO obterPneu(Long id) {
+        return PneuDTO.from(pneuRepositoryJPA.findById(id)
+                                .orElseThrow(() -> 
+                                new RuntimeException("Pneu não encontrado")
+                            ));
     }
     
     // Método para buscar um pneu específico
-    public Pneu findByNumeroDeFogo(Long numeroDeFogo) {
-        return pneuRepositoryJPA.findByNumeroDeFogo(numeroDeFogo).orElseThrow(() -> new RuntimeException("Pneu não encontrado"));
+    public PneuDTO findByNumeroDeFogo(Long numeroDeFogo) {
+        return PneuDTO.from(pneuRepositoryJPA.findByNumeroDeFogo(numeroDeFogo)
+                                .orElseThrow(() -> 
+                                new RuntimeException("Pneu não encontrado")
+                                ));
     }
     
     //Método para buscar pneus e situacao por placa de veiculo
@@ -40,7 +53,7 @@ public class PneuService {
     }
 
     // Método para salvar um novo pneu
-    public Pneu salvarPneu(Pneu pneu) {
-        return pneuRepositoryJPA.save(pneu);
+    public Pneu salvarPneu(PneuDTO pneu) {
+        return pneuRepositoryJPA.save(Pneu.from(pneu));
     }
 }

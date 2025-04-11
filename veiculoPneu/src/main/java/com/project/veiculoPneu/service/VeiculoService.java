@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.veiculoPneu.model.Veiculo;
-import com.project.veiculoPneu.model.VeiculoPneu;
 import com.project.veiculoPneu.model.dto.PneuDTO;
-import com.project.veiculoPneu.model.dto.VeiculoDTO;
 import com.project.veiculoPneu.model.dto.VeiculoPneuDTO;
 import com.project.veiculoPneu.repository.JPA.VeiculoRepositoryJPA;
 
