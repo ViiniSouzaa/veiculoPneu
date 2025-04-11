@@ -1,8 +1,6 @@
 package com.project.veiculoPneu.model.dto;
 
 import com.project.veiculoPneu.model.Pneu;
-import com.project.veiculoPneu.model.Veiculo;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

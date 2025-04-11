@@ -4,20 +4,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.project.veiculoPneu.model.Pneu;
-import com.project.veiculoPneu.model.Veiculo;
-import com.project.veiculoPneu.model.VeiculoPneu;
 import com.project.veiculoPneu.model.dto.PneuDTO;
 import com.project.veiculoPneu.repository.PneuRepository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
-import jakarta.persistence.TypedQuery;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Join;
-import jakarta.persistence.criteria.Root;
 
 @Repository
 public class PneuRepositoryImpl implements PneuRepository{

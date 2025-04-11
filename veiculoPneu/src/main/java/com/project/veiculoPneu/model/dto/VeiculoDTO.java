@@ -1,7 +1,5 @@
 package com.project.veiculoPneu.model.dto;
 
-import java.util.List;
-
 import com.project.veiculoPneu.model.Veiculo;
 
 import lombok.AllArgsConstructor;
