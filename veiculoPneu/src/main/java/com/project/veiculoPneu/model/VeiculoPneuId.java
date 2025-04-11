@@ -2,6 +2,7 @@ package com.project.veiculoPneu.model;
 
 import java.io.Serializable;
 
+import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,9 +10,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Embeddable
 public class VeiculoPneuId implements Serializable {
     private String placaVeiculo;
-    private Integer numeroDeFogo;
+    private Long numeroDeFogo;
     
     @Override
     public boolean equals(Object o) {

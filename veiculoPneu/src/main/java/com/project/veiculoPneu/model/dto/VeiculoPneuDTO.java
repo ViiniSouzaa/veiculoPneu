@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.project.veiculoPneu.model.Veiculo;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,9 +14,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class VeiculoPneuDTO {
 	
-	private VeiculoDTO veiculo;
-	
-	private List<PneuDTO> pneus;
+	@Schema(description = "Informações do veículo associado")
+    private VeiculoDTO veiculo;
+
+    @Schema(description = "Lista de pneus vinculados ao veículo")
+    private List<PneuDTO> pneus;
  
 	public VeiculoPneuDTO(Veiculo veiculo, List<PneuDTO> veiculoPneus) {
 		this.veiculo = VeiculoDTO.from(veiculo);

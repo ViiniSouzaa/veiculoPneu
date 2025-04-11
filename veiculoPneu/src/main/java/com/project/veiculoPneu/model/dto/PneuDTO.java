@@ -1,6 +1,8 @@
 package com.project.veiculoPneu.model.dto;
 
 import com.project.veiculoPneu.model.Pneu;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,11 +14,21 @@ import lombok.NoArgsConstructor;
 @Builder
 public class   PneuDTO {
 
+    @Schema(hidden = true)
     private Long id;
-	private Long numeroDeFogo;
+
+    @Schema(description = "Número de fogo do pneu", example = "12345")
+    private Long numeroDeFogo;
+    
+    @Schema(description = "Marca do pneu", example = "Bridgestone")
     private String marca;
+    
+    @Schema(description = "Pressão atual do pneu em PSI", example = "32")
     private Integer pressaoAtual;
+    
+    @Schema(description = "Status do pneu (ativo/inativo)", defaultValue = "inativo")
     private String status;
+    
     private String posicao;
 
     // Método estático para criar a instância do DTO de forma mais explícita

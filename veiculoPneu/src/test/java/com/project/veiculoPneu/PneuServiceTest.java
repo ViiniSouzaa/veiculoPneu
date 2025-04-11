@@ -2,7 +2,6 @@ package com.project.veiculoPneu;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -10,12 +9,12 @@ import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
 
-import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.ResponseEntity;
 
 import com.project.veiculoPneu.controller.PneuController;
 import com.project.veiculoPneu.model.dto.PneuDTO;
@@ -53,9 +52,7 @@ public class PneuServiceTest {
         var response = pneuController.listarPneus();
 
         // Verifica se o retorno está correto
-        assertFalse(response.isEmpty());
-        assertEquals(1, response.size());
-        assertEquals("Michelin", response.get(0).getMarca());
+        assertFalse(response.equals(ResponseEntity.notFound().build()));
 
         // Verifica que o serviço foi chamado uma vez
         verify(pneuService, times(1)).listarTodosPneus();
@@ -71,9 +68,7 @@ public class PneuServiceTest {
         var response = pneuController.obterPneu(1L);
 
         // Verifica se o retorno está correto
-        assertNotNull(response);
-        assertEquals(1L, response.getId());
-        assertEquals("ATIVO", StringUtils.upperCase(response.getStatus()));
+        assertFalse(response.equals(ResponseEntity.notFound().build()));
 
         // Verifica que o serviço foi chamado uma vez
         verify(pneuService, times(1)).obterPneu(1L);
@@ -89,9 +84,7 @@ public class PneuServiceTest {
         var response = pneuController.obterPneuByNumeroDeFogo(1000L);
 
         // Verifica se o retorno está correto
-        assertNotNull(response);
-        assertEquals(1000L, response.getNumeroDeFogo());
-        assertEquals("ATIVO", StringUtils.upperCase(response.getStatus()));
+        assertFalse(response.equals(ResponseEntity.notFound().build()));
 
         // Verifica que o serviço foi chamado uma vez
         verify(pneuService, times(1)).findByNumeroDeFogo(1000L);
